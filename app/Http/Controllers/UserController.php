@@ -108,7 +108,10 @@ class UserController extends Controller
 
     public function eliminar($id)
     {
+
         DB::table('users')->where('user_id', $id)->delete();
+        DB::table('users')->where('user_id', '>', $id)->decrement('user_id', 1);
+        DB::table('user_profiles')->where('upro_id', '>', $id)->decrement('upro_id', 1);
         return back();
     }
 }
