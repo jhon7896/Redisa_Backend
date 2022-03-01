@@ -52,8 +52,6 @@ CREATE TABLE user_profiles (
     foreign key(user_id) references users(user_id) ON UPDATE CASCADE
 );
 
-drop table if exists
-
 insert into roles (role_id, role_description, role_abbreviation, role_state) values
 (1, 'Administrador', 'Admin', '1'),
 (2, 'Usuario', 'User', '1');
