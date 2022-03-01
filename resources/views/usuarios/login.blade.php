@@ -108,11 +108,13 @@
                             let mensaje = data.mensaje;
                             let usuario = data.user_name;
                             $("#frmLogin")[0].reset();
-                            Swal.fire(
-                                'Login Exitoso!',
-                                mensaje + usuario.user_name,
-                                'success'
-                            )
+                            Swal.fire({
+                                icon: 'success',
+                                title: 'Login Exitoso!',
+                                text: mensaje + usuario.user_name,
+                                showConfirmButton: false,
+                                timer: 3000
+                            })
                             window.location.href = '{{ route('bienvenido.index') }}';
                         } else {
                             let mensaje = data.mensaje;
