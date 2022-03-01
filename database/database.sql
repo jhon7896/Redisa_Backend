@@ -23,6 +23,7 @@ CREATE TABLE users (
     user_name                   varchar(255) NOT NULL,
     user_password               text NOT NULL,
     user_state                  char(1) DEFAULT NULL,
+    user_lastLogin              timestamp default null,
     role_id                     int not null,
     remember_token              varchar(100) DEFAULT NULL,
     created_at 			        timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP(),
@@ -50,6 +51,8 @@ CREATE TABLE user_profiles (
     PRIMARY KEY (upro_id),
     foreign key(user_id) references users(user_id) ON UPDATE CASCADE
 );
+
+drop table if exists
 
 insert into roles (role_id, role_description, role_abbreviation, role_state) values
 (1, 'Administrador', 'Admin', '1'),
