@@ -23,7 +23,7 @@ CREATE TABLE users (
     user_name                   varchar(255) NOT NULL,
     user_password               text NOT NULL,
     user_state                  char(1) DEFAULT NULL,
-    user_lastLogin              timestamp default null,
+    user_lastLogin              timestamp NULL DEFAULT NULL,
     role_id                     int not null,
     remember_token              varchar(100) DEFAULT NULL,
     created_at 			        timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP(),
