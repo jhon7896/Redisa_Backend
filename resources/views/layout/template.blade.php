@@ -85,25 +85,56 @@
                 <nav class="mt-2">
                     <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu"
                         data-accordion="false">
+                        @if (auth()->user()->role_id == '1')
+                            <li class="nav-item">
+                                <a href="#" class="nav-link">
+                                    <i class="nav-icon fas fa-tachometer-alt"></i>
+                                    <p>
+                                        Administración
+                                        <i class="right fas fa-angle-left"></i>
+                                    </p>
+                                </a>
+                                <ul class="nav nav-treeview">
+                                    <li class="nav-item">
+                                        <a href="{{ route('roles.index') }}" class="nav-link">
+                                            <i class="far fa-circle nav-icon"></i>
+                                            <p>Roles</p>
+                                        </a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a href="{{ route('users.index') }}" class="nav-link">
+                                            <i class="far fa-circle nav-icon"></i>
+                                            <p>Usuarios</p>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+                        @endif
                         <li class="nav-item">
                             <a href="#" class="nav-link">
-                                <i class="nav-icon fas fa-tachometer-alt"></i>
+                                <i class="nav-icon nav-icon fas fa-book"></i>
                                 <p>
-                                    Administración
+                                    Mantenimiento
                                     <i class="right fas fa-angle-left"></i>
                                 </p>
                             </a>
                             <ul class="nav nav-treeview">
                                 <li class="nav-item">
-                                    <a href="{{ route('roles.index') }}" class="nav-link">
+                                    <a href="{{ route('categories.index') }}" class="nav-link">
                                         <i class="far fa-circle nav-icon"></i>
-                                        <p>Roles</p>
+                                        <p>Categorías</p>
                                     </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="{{ route('users.index') }}" class="nav-link">
+                                    <a href="{{ route('sub-categories.index') }}" class="nav-link">
                                         <i class="far fa-circle nav-icon"></i>
-                                        <p>Usuarios</p>
+                                        <p>Sub Categorías</p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="{{ route('products.index') }}" class="nav-link">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>Productos</p>
                                     </a>
                                 </li>
                             </ul>
@@ -156,10 +187,8 @@
 
     <!-- jQuery -->
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js">
-    </script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js">
-    </script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
     <script src="adminlte/plugins/sweetalert2/sweetalert2.min.js"></script>
     <script src="adminlte/plugins/toastr/toastr.min.js"></script>
     <script src="adminlte/dist/js/adminlte.min.js"></script>
